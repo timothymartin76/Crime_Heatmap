@@ -38,7 +38,7 @@ myPalette <- colorRampPalette(rev(brewer.pal(11, "Spectral")), space="Lab")
 #Create heatmap using ggplot2
 zp1 <- ggplot(md2, aes(x =Month, y = Offense, fill = value))
 zp1 <- zp1 + geom_tile()
-zp1 <- zp1 + scale_fill_gradientn(colours = myPalette(100)) + geom_text(size=4, aes(fill = md2$value, label = round(md2$value))) + xlab("Month") + ylab("Offense")
+zp1 <- zp1 + scale_fill_gradientn(colours = myPalette(100)) + geom_text(size=4, aes(fill = md2$value, label = round(md2$value, 2))) + xlab("Month") + ylab("Offense")
 zp1 <- zp1 + scale_x_discrete(expand = c(0, 0))
 zp1 <- zp1 + scale_y_discrete(expand = c(0, 0))
 zp1 <- zp1 + theme_bw() +  ggtitle("2015 NYC Felony Offenses - Heatmap") + theme(text= element_text(size=14))
